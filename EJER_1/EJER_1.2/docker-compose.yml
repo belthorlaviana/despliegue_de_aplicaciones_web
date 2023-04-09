@@ -1,0 +1,22 @@
+version: "3.8" 
+services:
+  maria_db_service: 
+    container_name: bbdd
+    image: mariadb:latest
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: base1
+      MYSQL_USER: daw
+      MYSQL_PASSWORD: laboral1
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+
+
+
+
+
+
