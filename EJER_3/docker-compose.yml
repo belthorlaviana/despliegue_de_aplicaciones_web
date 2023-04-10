@@ -1,0 +1,8 @@
+version: "3.8" 
+services:
+  sericio_docker_file: 
+    build: .
+    image: servicio_apache
+    container_name: servidor
+    ports:
+      - 1234:80

@@ -1,0 +1,31 @@
+version: "3.8" # 1
+services:
+  mariadb:
+    container_name: bbdd
+    networks:
+      - bdnet
+    image: mariadb:latest
+    restart: always
+    environment: #5
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: base1
+      MYSQL_USER: daw
+      MYSQL_PASSWORD: laboral1
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+  adminer:
+    image: adminer:latest
+    container_name: adminer
+    networks:
+      - bdnet    
+    environment:
+      ADMINER_DEFAULT_SERVER: mariadb
+    restart: always
+    ports:
+      - 8080:8080
+networks:
+   bdnet:
+
+
